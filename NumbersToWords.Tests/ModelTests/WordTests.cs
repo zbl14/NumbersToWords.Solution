@@ -59,5 +59,13 @@ namespace NumbersToWords.Tests
       string word = Word.WholeNumToWord(numStr);
       Assert.AreEqual("Eighty Eight", word);
     }
+
+    [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_OneHundredThirtyFive()
+    {
+      string numStr = "135";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("One Hundred Thirty Five", word);
+    }
   }
 }

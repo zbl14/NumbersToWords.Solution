@@ -114,8 +114,8 @@ namespace NumbersToWords.Models
       double num = double.Parse(numStr);
       bool isDone = false;
       int numDigit = numStr.Length;
-      // int digitGroup = 0;
-      // string digitGroupName = "";
+      int digitGroup = 0;
+      string digitGroupName = "";
       switch (numDigit)
       {
         case 1:
@@ -125,8 +125,23 @@ namespace NumbersToWords.Models
         case 2:
           word = Tens(numStr);
           isDone = true;
-          break;             
-      } 
+          break;
+        case 3:
+          digitGroup = (numDigit % 3) + 1;
+          digitGroupName = " Hundred ";
+          break;    
+      }
+      if (!isDone)
+      {
+        if (numStr.Substring(0, digitGroup) != "0" && numStr.Substring(digitGroup) != "0")
+        {
+          word = WholeNumToWord(numStr.Substring(0, digitGroup)) + digitGroupName + WholeNumToWord(numStr.Substring(digitGroup));
+        }
+        else
+        {
+          word = WholeNumToWord(numStr.Substring(0, digitGroup)) + WholeNumToWord(numStr.Substring(digitGroup));
+        }
+      }
       return word;
     }
   }
