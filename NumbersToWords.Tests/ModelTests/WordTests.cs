@@ -35,5 +35,13 @@ namespace NumbersToWords.Tests
       string word = Word.tens(numStr);
       Assert.AreEqual("Eleven", word);
     }
+
+    [TestMethod]
+    public void Tens_ReturnTens_NinetyNine()
+    {
+      string numStr = "99";
+      string word = Word.tens(numStr);
+      Assert.AreEqual("Ninety Nine", word);
+    }
   }
 }
