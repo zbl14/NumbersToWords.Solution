@@ -1,11 +1,11 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using NumbersToWords.Models;
 
-namespace ProjectName.Tests
+namespace NumbersToWords.Tests
 {
   [TestClass]
-  public class ClassNameTests // : IDisposable
+  public class WordTests // : IDisposable
   {
     // public void Dispose()
     // {

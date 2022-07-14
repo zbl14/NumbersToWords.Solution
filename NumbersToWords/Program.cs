@@ -1,7 +1,7 @@
 using System;
-using ProjectName.Models;
+using NumbersToWords.Models;
 
-namespace ProjectName
+namespace NumbersToWords
 {
   public class Program
   {

@@ -1,6 +1,6 @@
-namespace ProjectName.Models
+namespace NumbersToWords.Models
 {
-  public class ClassName
+  public class Word
   {
     // properties, constructors, methods, etc. go here
   }
