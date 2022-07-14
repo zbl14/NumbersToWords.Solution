@@ -4,7 +4,7 @@ namespace NumbersToWords.Models
   {
     public static int Num { get; set; }
 
-    public static string ones(string numStr)
+    public static string Ones(string numStr)
     {
       Num = int.Parse(numStr);
       string name = "";
@@ -37,14 +37,11 @@ namespace NumbersToWords.Models
         case 9:
           name = "Nine";
           break;
-        case 0:
-          name = "Zero";
-          break;
       } 
       return name;
     }
 
-    public static string tens(string numStr)
+    public static string Tens(string numStr)
     {
       Num = int.Parse(numStr);
       string name = null;
@@ -105,10 +102,32 @@ namespace NumbersToWords.Models
           name = "Ninety";
           break;
         default:
-          name = tens(numStr.Substring(0, 1) + "0") + " " + ones(numStr.Substring(1));
+          name = Tens(numStr.Substring(0, 1) + "0") + " " + Ones(numStr.Substring(1));
           break;          
       } 
       return name;
+    }
+
+    public static string WholeNumToWord(string numStr)
+    {
+      string word = "";
+      double num = double.Parse(numStr);
+      bool isDone = false;
+      int numDigit = numStr.Length;
+      // int digitGroup = 0;
+      // string digitGroupName = "";
+      switch (numDigit)
+      {
+        case 1:
+          word = Ones(numStr);
+          isDone = true;
+          break;
+        case 2:
+          word = Tens(numStr);
+          isDone = true;
+          break;             
+      } 
+      return word;
     }
   }
 }

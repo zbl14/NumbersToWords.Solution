@@ -16,7 +16,7 @@ namespace NumbersToWords.Tests
     public void Ones_ReturnOnes_One()
     {
       string numStr = "1";
-      string word = Word.ones(numStr);
+      string word = Word.Ones(numStr);
       Assert.AreEqual("One", word);
     }
 
@@ -24,7 +24,7 @@ namespace NumbersToWords.Tests
     public void Ones_ReturnOnes_Nine()
     {
       string numStr = "9";
-      string word = Word.ones(numStr);
+      string word = Word.Ones(numStr);
       Assert.AreEqual("Nine", word);
     }
 
@@ -32,7 +32,7 @@ namespace NumbersToWords.Tests
     public void Tens_ReturnTens_Eleven()
     {
       string numStr = "11";
-      string word = Word.tens(numStr);
+      string word = Word.Tens(numStr);
       Assert.AreEqual("Eleven", word);
     }
 
@@ -40,8 +40,24 @@ namespace NumbersToWords.Tests
     public void Tens_ReturnTens_NinetyNine()
     {
       string numStr = "99";
-      string word = Word.tens(numStr);
+      string word = Word.Tens(numStr);
       Assert.AreEqual("Ninety Nine", word);
+    }
+
+    [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_Five()
+    {
+      string numStr = "5";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("Five", word);
+    }
+
+    [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_EightEight()
+    {
+      string numStr = "88";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("Eighty Eight", word);
     }
   }
 }
