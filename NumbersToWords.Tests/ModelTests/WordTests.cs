@@ -13,10 +13,12 @@ namespace NumbersToWords.Tests
     // }
 
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void Ones_ReturnOnes_One()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      // Word testWord = new Word();
+      string numStr = "1";
+      string word = Word.ones(numStr);
+      Assert.AreEqual("One", word);
     }
   }
 }

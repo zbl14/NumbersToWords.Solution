@@ -2,6 +2,19 @@ namespace NumbersToWords.Models
 {
   public class Word
   {
-    // properties, constructors, methods, etc. go here
+    public static int Num { get; set; }
+
+    public static string ones(string numStr)
+    {
+      Num = int.Parse(numStr);
+      string name = "";
+      switch (Num)
+      {
+        case 1:
+          name = "One";
+          break;
+      } 
+      return name;
+    }
   }
 }
