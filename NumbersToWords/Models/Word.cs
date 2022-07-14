@@ -129,7 +129,16 @@ namespace NumbersToWords.Models
         case 3:
           digitGroup = (numDigit % 3) + 1;
           digitGroupName = " Hundred ";
-          break;    
+          break;
+        case 4:
+        case 5:
+        case 6:
+          digitGroup = (numDigit % 4) + 1;
+          digitGroupName = " Thousand ";
+          break;
+        default:
+          isDone = true;
+          break;              
       }
       if (!isDone)
       {
