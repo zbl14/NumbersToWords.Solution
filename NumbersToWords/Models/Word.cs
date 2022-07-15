@@ -148,6 +148,12 @@ namespace NumbersToWords.Models
           digitGroup = (numDigit % 4) + 1;
           digitGroupName = " Thousand ";
           break;
+        case 7: 
+        case 8:  
+        case 9:  
+            digitGroup = (numDigit % 7) + 1;  
+            digitGroupName = " Million ";  
+            break; 
         default:
           isDone = true;
           break;              

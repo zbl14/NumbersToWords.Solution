@@ -99,5 +99,13 @@ namespace NumbersToWords.Tests
       string word = Word.WholeNumToWord(numStr);
       Assert.AreEqual("Two Hundred Four Thousand Five Hundred Eleven", word);
     }
+
+    [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_SevenHundredTenMillionTwoHundredThirtyFourThousandFiveHundred()
+    {
+      string numStr = "710204511";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("Seven Hundred Ten Million Two Hundred Four Thousand Five Hundred Eleven", word);
+    }
   }
 }
