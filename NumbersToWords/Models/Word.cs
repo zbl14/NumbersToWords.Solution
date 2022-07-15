@@ -1,3 +1,5 @@
+using System;
+
 namespace NumbersToWords.Models
 {
   public class Word
@@ -45,65 +47,73 @@ namespace NumbersToWords.Models
     {
       Num = int.Parse(numStr);
       string name = null;
-      switch (Num)
+      bool beginsZero = numStr.StartsWith("0");
+      if (beginsZero == true) 
       {
-        case 10:
-          name = "Ten";
-          break;
-        case 11:
-          name = "Eleven";
-          break;
-        case 12:
-          name = "Tweleve";
-          break;
-        case 13:
-          name = "Thirteen";
-          break;
-        case 14:
-          name = "Forteen";
-          break;
-        case 15:
-          name = "Fifthteen";
-          break;
-        case 16:
-          name = "Sixteen";
-          break;
-        case 17:
-          name = "Seventeen";
-          break;
-        case 18:
-          name = "Eighteen";
-          break;
-        case 19:
-          name = "Nineteen";
-          break;
-        case 20:
-          name = "Twenty";
-          break;
-        case 30:
-          name = "Thirty";
-          break;
-        case 40:
-          name = "Forty";
-          break;
-        case 50:
-          name = "Fifty";
-          break;
-        case 60:
-          name = "Sixty";
-          break;
-        case 70:
-          name = "Seventy";
-          break;
-        case 80:
-          name = "Eighty";
-          break;
-        case 90:
-          name = "Ninety";
-          break;
-        default:
-          name = Tens(numStr.Substring(0, 1) + "0") + " " + Ones(numStr.Substring(1));
-          break;          
+        name = Ones(numStr.Substring(1));
+      } 
+      else 
+      { 
+        switch (Num)
+        {
+          case 10:
+            name = "Ten";
+            break;
+          case 11:
+            name = "Eleven";
+            break;
+          case 12:
+            name = "Tweleve";
+            break;
+          case 13:
+            name = "Thirteen";
+            break;
+          case 14:
+            name = "Forteen";
+            break;
+          case 15:
+            name = "Fifthteen";
+            break;
+          case 16:
+            name = "Sixteen";
+            break;
+          case 17:
+            name = "Seventeen";
+            break;
+          case 18:
+            name = "Eighteen";
+            break;
+          case 19:
+            name = "Nineteen";
+            break;
+          case 20:
+            name = "Twenty";
+            break;
+          case 30:
+            name = "Thirty";
+            break;
+          case 40:
+            name = "Forty";
+            break;
+          case 50:
+            name = "Fifty";
+            break;
+          case 60:
+            name = "Sixty";
+            break;
+          case 70:
+            name = "Seventy";
+            break;
+          case 80:
+            name = "Eighty";
+            break;
+          case 90:
+            name = "Ninety";
+            break;
+          default:
+            name = Tens(numStr.Substring(0, 1) + "0") + " " + Ones(numStr.Substring(1));
+            break;
+        } 
       } 
       return name;
     }
@@ -112,7 +122,9 @@ namespace NumbersToWords.Models
     {
       string word = "";
       double num = double.Parse(numStr);
+      bool beginsZero = false;
       bool isDone = false;
+      beginsZero = numStr.StartsWith("0");
       int numDigit = numStr.Length;
       int digitGroup = 0;
       string digitGroupName = "";
@@ -151,6 +163,7 @@ namespace NumbersToWords.Models
           word = WholeNumToWord(numStr.Substring(0, digitGroup)) + WholeNumToWord(numStr.Substring(digitGroup));
         }
       }
+      word = word.Trim();
       return word;
     }
   }

@@ -37,6 +37,14 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
+    public void Tens_ReturnTens_One()
+    {
+      string numStr = "01";
+      string word = Word.Tens(numStr);
+      Assert.AreEqual("One", word);
+    }
+
+    [TestMethod]
     public void Tens_ReturnTens_NinetyNine()
     {
       string numStr = "99";
@@ -69,11 +77,27 @@ namespace NumbersToWords.Tests
     }
 
     [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_OneHundred()
+    {
+      string numStr = "100";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("One Hundred", word);
+    }
+
+    [TestMethod]
+    public void WholeNumToWord_ReturnWholeNumberWords_OneThousand()
+    {
+      string numStr = "1000";
+      string word = Word.WholeNumToWord(numStr);
+      Assert.AreEqual("One Thousand", word);
+    }
+
+    [TestMethod]
     public void WholeNumToWord_ReturnWholeNumberWords_TwoHundredThirtyFourThousandFiveHundred()
     {
-      string numStr = "234500";
+      string numStr = "204511";
       string word = Word.WholeNumToWord(numStr);
-      Assert.AreEqual("Two Hundred Thirty Four Thousand Five Hundred", word);
+      Assert.AreEqual("Two Hundred Four Thousand Five Hundred Eleven", word);
     }
   }
 }
