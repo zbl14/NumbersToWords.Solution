@@ -153,6 +153,12 @@ namespace NumbersToWords.Models
         case 9:  
             digitGroup = (numDigit % 7) + 1;  
             digitGroupName = " Million ";  
+            break;
+        case 10: 
+        case 11:  
+        case 12:  
+            digitGroup = (numDigit % 10) + 1;  
+            digitGroupName = " Billion ";  
             break; 
         default:
           isDone = true;
